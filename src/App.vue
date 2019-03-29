@@ -1,29 +1,44 @@
 <template>
   <div id="app">
+    <logo></logo>
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/">Dashboard</router-link>
     </div>
     <router-view/>
+    <!-- Inject -->
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<script>
+  import Logo from './components/Logo.vue'
+export default {
+  name: 'App',
+  components: {
+    Logo
   }
 }
+</script>
+
+
+<style lang="sass">
+
+@import url('https://fonts.googleapis.com/css?family=Raleway|Roboto')
+
+*
+  box-sizing: border-box
+
+#app
+  text-align: center
+  color: #2c3e50
+  font-family: 'Roboto', sans-serif
+
+#nav
+  font-size: 1.2rem
+  padding: 30px
+  a
+    font-weight: bold
+    color: #2c3e50
+
+    &.router-link-exact-active
+      color: #42b983
 </style>
